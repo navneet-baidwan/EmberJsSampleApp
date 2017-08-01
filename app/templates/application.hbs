@@ -1,30 +1,382 @@
+<style type="text/css">
+
+  .header-bar{
+    background: #2c3e50;
+    color:white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 20vh;
+    z-index: 50;
+   
+  }
+  .heading-text{
+    color:white !important;
+    font-size:25px;
+    font-weight:bolder!important;
+  }
+  .nav-text{
+    color:white !important;
+    font-size:18px;
+    font-weight:bolder!important;
+  }
+  .set-center{
+    height:120px;
+    display:flex !important;;
+    align-items:center!important;
+ 
+  }
+  .login-btn{
+    position:absolute;
+    right:20px;
+    top:25px;
+  }
+  .stable{
+     position:fixed;
+  }
+  .ui.secondary.menu .active.item {
+    background: #18BC9C !important;
+    border-radius: 0px !important;
+  }
+  #home {
+    background-color: rgba(128, 128, 128, 0.49);
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+        display: grid;
+    align-items:center;
+  }
+
+  #about {
+      background-color: blue;
+      height: 100vh;
+      width: 100%;
+  }
+  #contact {
+      background-color: red;
+      height: 100vh;
+      width: 100%;
+  }
+  #footer{
+    height: 40vh;
+    background: #2C3E50;
+    display: grid;
+    align-items: center;
+  }
+  #bottom-bar{
+    height: 50px;
+    background: #1d2a38;
+    display: grid;
+    align-items: center;
+    text-align:center;
+  }
+  .set-center{
+    alignSelf:'center';
+    padding: 0.78571429em 0.92857143em;
+    margin: 0em 0.35714286em;
+  }
+  .ui.icon.button{
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 100%;
+    color:white;
+  }
+
+  .ui.icon.button:hover{
+    background: white !important;
+    color:#18BC9C;
+    
+  }
+  .footer-text-h{
+    color:white !important;
+    font-weight: bold;
+  }
+
+  .footer-text-p{
+    color:white !important;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .cpyrt{
+    color:white;
+  }
+	
+	a:link, a:visited, a:hover, a:active {
+	  text-decoration: none; color: white;
+	}
+
+</style>
 
 
-<!-- Headr Contents -->
 
-<div class="ui   segment" style="background: rgba(87, 136, 160, 0.63);">
-  <div class="ui grid">
-     <div class="thirteen wide column"></div>
-        <div class="three wide column">
-          <div class="ui buttons">
-            <button class="ui button instagram" {{action "getLogin"}}>Login</button>
-            <div class="or"></div>
-            <button class="ui  linkedin button" {{action "getRegister"}}>Sign Up</button>
+
+
+<div class="ui top fixed header-bar large" >
+
+    <div class="ui secondary  menu  " style="height:20vh">
+      
+      <div class="left menu">
+       <a class="set-center heading-text">
+          Workype
+        </a>
+        <div class="set-center">
+          <div class="ui icon input">
+            <input type="text" placeholder="Search...">
+            <i class="search link icon"></i>
           </div>
         </div>
-    </div>
+
+      
+    {{#unless  isLanding}}   
+        <a class="item nav-text" >
+           {{#link-to 'about'}}About{{/link-to}}
+        </a>
+	
+        <a class="item nav-text" >
+           {{#link-to 'contact'}}Contact{{/link-to}}
+        </a>
+    
+    {{else}}   
+        <a class="item nav-text" >
+           {{#link-to 'companyform'}} Create company Page {{/link-to}}
+        </a>
+	
+   {{/unless }}  
+  
+
+    
+
+      </div>
+    
+       <div class="right menu">
+          <a class="ui set-center">
+           {{#unless isLanding}} 
+
+              <form class="ui form  " style="width:100%; ">
+ 
+                  <div class=" three  fields">
+
+                    <div class="field">
+                      <label style="color:white">&nbsp;</label>
+                      <input value={{userEmail}} type="text" name="first-name" placeholder="Email" >
+                    </div>
+                    <div class="field">
+                       <label style="color:white">&nbsp;</label>
+                      <input type="password" name="last-name" placeholder="Password" >
+                    </div>
+                    <div class="field">
+                      <label style="color:white">&nbsp;</label>
+                      <button class="button ui instagram" {{action "afterLogin"}} >Login</button>
+                    </div>
+                  </div>
+
+              </form>
+
+
+           {{else}}   
+
+               <div class="ui inline dropdown" >
+             
+                  <div class="text" style="color:white"  {{action "dropDown"}}>
+                     <i class="user icon" ></i>
+                    Jenny Hess
+                  </div>
+                  <i class="dropdown icon"  style="color:white!important"></i>
+              
+                  <div class="menu">
+                    <div class="item" {{action "getEditProfile"}}>
+                        <i class="edit icon" ></i>
+                       Edit Profile 
+                    </div>
+                 
+                    <div class="item" {{action "getLogout"}}>
+                        <i class="lock icon"></i>
+                          Logout
+                    </div>
+                  </div>
+              </div>
+
+            {{/unless}}
+
+
+
+          </a>
+
+
+
+
+
+
+
+
+
+        </div>
+   	
+  
+ </div>
+
+
+
+
 </div>
 
 
-<!-- Search Input Box -->
 
-<center>
-    <div class="ui icon input focus" style="width: 40%;
-    margin-top: 15%;">
-       <input type="text" placeholder="Search...">
-      <i class="inverted circular search link icon"></i>
+
+
+
+<--!Login form model will show on click on login button!-->
+
+  <div class="ui modal tiny"  id="login">
+        <i class="close icon"></i>
+        <div class="header">
+          Log-in to your account 
+        </div>
+         <div class="ui middle aligned center aligned grid">
+              <div class="column">
+               
+                      <form class="ui large form">
+                        <div class="ui stacked segment">
+                          <div class="field">
+                            <div class="ui left icon input">
+                              <i class="mail  icon"></i>
+                              <input type="text" name="email" placeholder="E-mail address">
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui left icon input">
+                              <i class="lock icon"></i>
+                              <input type="password" name="password" placeholder="Password">
+                            </div>
+                          </div>
+                          <div class="ui fluid large instagram submit button" {{action "afterLogin"}}>Login</div>
+                        </div>
+                     </form>
+                </div>
+        </div>
+   </div>
+
+
+
+
+<--!Signup form model , will show on click on signup button!-->
+
+
+   <div class="ui modal tiny" id="signup">
+        <i class="close icon"></i>
+        <div class="header">
+          Sign Up
+        </div>
+         <div class="ui middle aligned center aligned grid">
+              <div class="column">
+                    <form class="ui large form">
+                        <div class="ui stacked segment">
+                         
+                          <div class="field">
+                            <div class="ui left icon input">
+                              <i class="user icon"></i>
+                              <input type="text" name="email" placeholder="Full Name">
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui left icon input">
+                              <i class="user icon"></i>
+                              <input type="text" name="email" placeholder="Username">
+                            </div>
+                          </div>
+
+
+                          <div class="field">
+                            <div class="ui left icon input">
+                              <i class="mail icon"></i>
+                              <input type="text" name="email" placeholder="E-mail">
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui left icon input">
+                              <i class="lock icon"></i>
+                              <input type="password" name="email" placeholder="Password">
+                            </div>
+                          </div>
+
+                          <div class="field">
+                            <div class="ui left icon input">
+                              <i class="lock icon"></i>
+                              <input type="password" name="password" placeholder="Confirm  Password">
+                            </div>
+                          </div>
+                        <div class="ui fluid large instagram submit button" {{action "afterSignup"}}>Sign Up</div>
+                        </div>
+                      </form>
+                </div>
+          </div>
     </div>
-</center>
 
 
- 
+{{outlet}}
+
+
+<div id="footer">
+
+<div class="ui stackable two column grid">
+  <div class="column center aligned">
+   {{#unless isLanding}}
+    <h3 class="footer-text-h">Location</h3>
+    <br>
+    <p class="footer-text-p">3481 Melrose Place <br>Beverly Hills, CA 90210</p>
+    {{else}} 
+
+      <h3 class="footer-text-h">
+
+         <a class="item nav-text">
+           {{#link-to 'about'}}About{{/link-to}}
+        </a>
+      </h3>
+
+    {{/unless}}
+  </div>
+  <div class="column center aligned">
+   {{#unless isLanding}}
+
+       <h3 class="footer-text-h">AROUND THE WEB</h3>
+       <br>
+       <div class="ui stackable one column grid">
+       <div class="column">
+                <button class="ui icon button">
+                  <i class="facebook f icon"></i>
+                </button>
+                 <button class="ui icon button">
+                  <i class="google plus icon"></i>
+                </button>
+                 <button class="ui icon button">
+                  <i class="twitter icon"></i>
+                </button>
+                <button class="ui icon button">
+                  <i class="linkedin icon"></i>
+                </button>
+                <button class="ui icon button">
+                  <i class="dribble icon"></i>
+                </button>
+        </div>
+       </div>
+       
+    {{else}} 
+
+      <h3 class="footer-text-h">
+
+         <a class="item nav-text">
+           {{#link-to 'contact'}}Contact{{/link-to}}
+        </a>
+      </h3>
+
+    {{/unless}}
+  </div>
+  
+</div>
+
+
+
+</div>
+<div id="bottom-bar">
+  <div class="cpyrt"> Copyright © Your Website 2016 </div>
+</div>
