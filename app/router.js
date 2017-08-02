@@ -15,6 +15,7 @@ Router.map(function() {
   this.route('landing',{path:'/'});
   this.route('editprofile');
   this.route('companyform');
+  this.route('results');
 });
 
 export default Router;

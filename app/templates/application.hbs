@@ -42,8 +42,8 @@
     background-color: rgba(128, 128, 128, 0.49);
     height: 100vh;
     width: 100%;
-    overflow: hidden;
-        display: grid;
+    overflow: scroll;
+    display: grid;
     align-items:center;
   }
 
@@ -69,9 +69,10 @@
     display: grid;
     align-items: center;
     text-align:center;
+   
   }
   .set-center{
-    alignSelf:'center';
+    align-self: center;
     padding: 0.78571429em 0.92857143em;
     margin: 0em 0.35714286em;
   }
@@ -105,6 +106,70 @@
 	  text-decoration: none; color: white;
 	}
 
+.ui.black.ribbon.label{
+  top:-25px;
+  background-color: rgb(44, 62, 80) !important;
+  text-align: center;
+  font-size: 20px;
+  border-color: #e4e4e8 !important;
+  margin-left: -5px;
+}
+.ui.ribbon.label{
+      min-width: 105%;
+      min-height:50px;
+
+
+}
+.form-container{
+  height: 80vh;
+  
+  overflow:scroll;
+  width: 90%;
+  margin: 5%;
+
+}
+.submit-button{
+    background: rgb(44, 62, 80) !important;
+    width: 80%!important;
+    color: white!important;
+    height: 50px!important;
+    margin-left:10%!important;
+    font-size:20px!important;
+}
+.seardh-top{
+    position: absolute !important;
+    top: 25vh;
+    left: 94px;
+    height: 42px;
+    width:90%;
+}
+.filter-ribbon{
+    text-align: center !important;
+    align-items: center!important;
+    display: flex!important;
+    font-size: 15px!important;
+}
+.filter-header{
+    text-align: center !important;
+    font-size: 18px !important;
+    background: rgb(44, 62, 80) !important;
+    color: white !important;
+    width: 200px !important;
+}
+.filter-section{
+  height:20vh;
+  overflow:scroll
+}
+
+.sidemenu{
+    border: 2px solid #2c3e50;
+    max-width: 50%;
+    width:200px;
+    height: 100vh;
+    background: rgba(44, 62, 80, 0.68);
+    overflow-y: scroll;
+}
+
 </style>
 
 
@@ -119,15 +184,11 @@
        <a class="set-center heading-text">
           Workype
         </a>
-        <div class="set-center">
-          <div class="ui icon input">
-            <input type="text" placeholder="Search...">
-            <i class="search link icon"></i>
-          </div>
-        </div>
+   
+        
 
       
-    {{#unless  isLanding}}   
+    {{#if  isLanding}}   
         <a class="item nav-text" >
            {{#link-to 'about'}}About{{/link-to}}
         </a>
@@ -135,13 +196,13 @@
         <a class="item nav-text" >
            {{#link-to 'contact'}}Contact{{/link-to}}
         </a>
-    
-    {{else}}   
+    {{/if}}   
+    {{#if  isLoggedIn}}   
         <a class="item nav-text" >
-           {{#link-to 'companyform'}} Create company Page {{/link-to}}
+            Create company Page
         </a>
 	
-   {{/unless }}  
+     {{/if }}  
   
 
     
@@ -150,9 +211,9 @@
     
        <div class="right menu">
           <a class="ui set-center">
-           {{#unless isLanding}} 
+           {{#unless isLoggedIn}} 
 
-              <form class="ui form  " style="width:100%; ">
+               <form class="ui form  " style="width:100%; ">
  
                   <div class=" three  fields">
 
@@ -170,12 +231,11 @@
                     </div>
                   </div>
 
-              </form>
+                  </form>
 
-
-           {{else}}   
-
-               <div class="ui inline dropdown" >
+              
+            {{else}}
+                   <div class="ui inline dropdown" >
              
                   <div class="text" style="color:white"  {{action "dropDown"}}>
                      <i class="user icon" ></i>
@@ -194,7 +254,11 @@
                           Logout
                     </div>
                   </div>
-              </div>
+             
+               </div>
+              
+
+              
 
             {{/unless}}
 
@@ -315,28 +379,20 @@
 
 {{outlet}}
 
-
-<div id="footer">
+{{#unless isLoggedIn}}
+  
+  <div id="footer">
 
 <div class="ui stackable two column grid">
   <div class="column center aligned">
-   {{#unless isLanding}}
+  
     <h3 class="footer-text-h">Location</h3>
     <br>
     <p class="footer-text-p">3481 Melrose Place <br>Beverly Hills, CA 90210</p>
-    {{else}} 
-
-      <h3 class="footer-text-h">
-
-         <a class="item nav-text">
-           {{#link-to 'about'}}About{{/link-to}}
-        </a>
-      </h3>
-
-    {{/unless}}
+   
   </div>
   <div class="column center aligned">
-   {{#unless isLanding}}
+  
 
        <h3 class="footer-text-h">AROUND THE WEB</h3>
        <br>
@@ -360,23 +416,17 @@
         </div>
        </div>
        
-    {{else}} 
 
-      <h3 class="footer-text-h">
-
-         <a class="item nav-text">
-           {{#link-to 'contact'}}Contact{{/link-to}}
-        </a>
-      </h3>
-
-    {{/unless}}
   </div>
   
 </div>
-
-
-
 </div>
-<div id="bottom-bar">
-  <div class="cpyrt"> Copyright © Your Website 2016 </div>
-</div>
+
+{{else}}
+
+
+
+
+
+
+{{/unless}}

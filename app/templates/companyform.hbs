@@ -1,8 +1,37 @@
-<div class="" style=" margin-top: 25vh; display:flex; align-items:center">
 
 
-<form class="ui form" style="width:60%; margin-left:20%;">
-  
+
+
+
+
+
+
+
+<div id="home">
+
+
+
+<div class="ui grid">
+  <div class="one wide column"></div>
+  <div class="fourteen wide column">
+
+
+
+<form class="ui form" style="width:60%; margin-left:20%; margin-top:20vh;">
+<br><br>
+<div class="ui  column grid">
+  <div class="column">
+    <div class="ui fluid image">
+      <div class="ui black ribbon label">
+       <i class="industry icon"></i> Create Company
+      </div>
+    </div>
+  </div>
+</div>  
+<br><br>
+ 
+ 
+
   <div class="field">
     <label>Company Name</label>
     <input type="text" name="last-name" placeholder="Company Name">
@@ -12,32 +41,37 @@
 
 
 
-<div class="three fields">
-
- <div class="ten wide  field">
+ <div class="field">
       <label>Company Type</label>
-      <div class="fields">
-        <div class="fifteen wide  field field">
-          <select class="ui fluid search dropdown">
-          <option value="">Company Type 1</option>
-            <option value="1">Company Type 2</option>
-            <option value="2">Company Type 3</option>
-          </select>
-        </div>
-	</div>
-</div>
- <div class="ten wide  field">
+      <div class="ui fluid multiple search selection dropdown">
+            <input type="hidden" name="country">
+            <i class="dropdown icon" ></i>
+            <div class="default text">Company Type</div>
+                <div class="menu">
+                <div class="item" data-value="c1">Software</div>
+                 <div class="item" data-value="c2">Hardware</div>
+                  <div class="item" data-value="c3">Company Type 3</div>
+                </div>
+             </div>
+            </div>
+
+
+ <div class="field">
       <label>Product Type</label>
-      <div class="fields">
-        <div class="fifteen wide  field field">
-          <select class="ui fluid search dropdown">
-          <option value="">Product Type 1</option>
-            <option value="1">Product Type 2</option>
-            <option value="2">Product Type 3</option>
-          </select>
-        </div>
-	</div>
-</div>
+      <div class="ui fluid multiple search selection dropdown">
+            <input type="hidden" name="country">
+            <i class="dropdown icon" ></i>
+            <div class="default text">Company Type</div>
+                <div class="menu">
+                <div class="item" data-value="p1">Type1</div>
+                 <div class="item" data-value="p2">Type2</div>
+                  <div class="item" data-value="p3">Type3 Type 3</div>
+                </div>
+          </div>
+
+
+
+
 
 
 
@@ -111,9 +145,25 @@
 
 
 
-  <button class="ui button" type="submit">Create</button>
+  <button class="ui button submit-button" type="submit">Submit</button>
+
+
+
+
 </form>
 
 
+
+
+  </div>
+   <div class="one wide column"></div>
 </div>
-<br>
+     
+
+
+
+</div>
+
+<div id="bottom-bar">
+  <div class="cpyrt"> Copyright © Your Website 2016 </div>
+</div>

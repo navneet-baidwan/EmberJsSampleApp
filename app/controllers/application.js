@@ -65,9 +65,65 @@ export default Ember.Controller.extend({
 
 					console.log(r.currentPath
 						)
-				   if(r.currentPath=='landing'||r.currentPath=='about'||r.currentPath=='contact'){
-				   		this.setProperties({isLanding:false});
 
+					switch(r.currentPath){
+
+						case 'landing':
+							
+							this.setProperties({isLanding:true});
+							this.setProperties({isLoggedIn:false});
+
+						break;
+
+						case 'home':
+
+							this.setProperties({isLanding:false});
+							this.setProperties({isLoggedIn:true});
+
+						break;
+
+						case 'about':
+
+							this.setProperties({isLanding:false});
+							this.setProperties({isLoggedIn:false});
+
+						break;
+
+						case 'contact':
+
+							this.setProperties({isLanding:false});
+							this.setProperties({isLoggedIn:false});
+
+						break;
+
+						case 'editprofile':
+
+							this.setProperties({isLanding:false});
+							this.setProperties({isLoggedIn:true});
+							
+						break;
+
+						case 'results':
+
+							this.setProperties({isLanding:false});
+							this.setProperties({isLoggedIn:true});
+							
+						break;
+
+						case 'companyform':
+
+							this.setProperties({isLanding:false});
+							this.setProperties({isLoggedIn:true});
+
+			
+
+
+
+					}
+
+
+
+				
 					   	$('.ui.dropdown').on('click', function(){
 				    	 
 
@@ -78,14 +134,9 @@ export default Ember.Controller.extend({
 				    	 		else{
 				    	 			close = true
 				    	 		}
+				    	 	})
 								
-				    	 })
-				   }
-				   else{
-				   		this.setProperties({isLanding:true});
-
-
-				   }
+				
 				   
 
 				});
