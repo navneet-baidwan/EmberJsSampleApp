@@ -29,22 +29,22 @@
 <br><br>
  <div class="field">
     <label>Profile Picture</label>
-    <input type="file" name="last-name" placeholder="Username">
+    <input type="file" name="profile" placeholder="Username">
   </div> 
 
-  <div class="field">
+  <div class="field ">
     <label>Username</label>
-    <input type="text" name="last-name" placeholder="Username">
+    <input type="text" name="username" placeholder="Username">
   </div> 
 <div class="two fields">
 
-  <div class="field">
+  <div class="field ">
     <label>First Name</label>
-    <input type="text" name="first-name" placeholder="First Name">
+    <input type="text" name="fname" placeholder="First Name">
   </div>
   <div class="field">
     <label>Last Name</label>
-    <input type="text" name="last-name" placeholder="Last Name">
+    <input type="text" name="lname" placeholder="Last Name">
   </div>
 
 </div>
@@ -53,12 +53,12 @@
 <div class="two fields">
   <div class="field">
     <label>Contact</label>
-    <input type="text" name="last-name" placeholder="Contact">
+    <input type="number" name="contact" placeholder="Contact">
   </div>
 
   <div class="field">
     <label>Email</label>
-    <input type="text" name="last-name" placeholder="Email">
+    <input type="email" name="email" placeholder="Email">
   </div>
 </div>
 <div class="three fields">
@@ -66,7 +66,7 @@
     <label>Company Name</label>
    
     <div class="ui action input">
-  <input type="text" placeholder="Company Name">
+  <input type="text" name="cname" placeholder="Company Name">
   <button class="ui icon button" {{action "getCompanyForm"}} style="background:#2c3e50!important;     border-radius: 100%;">
     <i class="plus icon"></i>
   </button>
@@ -75,20 +75,21 @@
   </div>
   <div class="field">
     <label>Job Title</label>
-    <input type="text" name="last-name" placeholder="Jobtitle">
+    <input type="text" name="jobtitle" placeholder="Jobtitle">
   </div>
   <div class="field">
     <label>Years of Experience</label>
-    <input type="number" name="last-name" min="1" placeholder="Years of Experience">
+    <input type="number" name="expereince" min="1" placeholder="Years of Experience">
   </div>
  </div>
   <div class="field">
     <label>Summary</label>
-    <input type="text" name="last-name" placeholder="Summary">
+    <input type="text" name="summary" placeholder="Summary">
   </div>
 
- <button class="ui button submit-button" type="submit">Submit</button>
-  
+ <button class="ui button submit-button"  type="submit">Submit</button>
+    <div class="ui error message">
+  </div>
 
 
 
@@ -122,11 +123,6 @@
 
 
 
-</div>
-
-
-<div id="bottom-bar">
-  <div class="cpyrt"> Copyright © Your Website 2016 </div>
 </div>
 
 

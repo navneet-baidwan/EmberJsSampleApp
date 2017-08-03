@@ -85,14 +85,14 @@ export default Ember.Controller.extend({
 						case 'about':
 
 							this.setProperties({isLanding:false});
-							this.setProperties({isLoggedIn:false});
+							this.setProperties({isLoggedIn:true});
 
 						break;
 
 						case 'contact':
 
 							this.setProperties({isLanding:false});
-							this.setProperties({isLoggedIn:false});
+							this.setProperties({isLoggedIn:true});
 
 						break;
 
@@ -110,6 +110,13 @@ export default Ember.Controller.extend({
 							
 						break;
 
+						case 'details':
+
+							this.setProperties({isLanding:false});
+							this.setProperties({isLoggedIn:true});
+							
+						break;
+
 						case 'companyform':
 
 							this.setProperties({isLanding:false});
@@ -121,20 +128,42 @@ export default Ember.Controller.extend({
 
 					}
 
+						$(document).ready(function(){
+							 				$('.ui.form.login')
+												  .form({
+												    fields: {
+												      email: {
+												        rules: [
+												          {
+												            type   : 'empty'
+												          }
+												        ]
+												      },
+												       password: {
+												        rules: [
+												          {
+												            type   : 'empty'
+												          }
+												        ]
+												      }
+												    }})
 
-
-				
-					   	$('.ui.dropdown').on('click', function(){
+								$('.ui.dropdown').on('click', function(){
 				    	 
 
-				    	 		if(close){
-				    	 			$('.ui.dropdown').dropdown()
-				    	 			close = false
-				    	 		}
-				    	 		else{
-				    	 			close = true
-				    	 		}
-				    	 	})
+						    	 		if(close){
+						    	 			$('.ui.dropdown').dropdown()
+						    	 			close = false
+						    	 		}
+						    	 		else{
+						    	 			close = true
+						    	 		}
+						    	})
+
+
+						})
+				
+					   
 								
 				
 				   

@@ -20,7 +20,18 @@ export default Ember.Controller.extend({
 												$('.ui.dropdown').dropdown()
 									    	 			
 									    	 	})
+					  			
+
+					  				 $('.ui.accordion').on('click', function(){
+									    	 
+												 $('.ui.accordion').accordion();
+									    	 			
+									    	 	})
 					  				})
+
+
+
+
 					 }
 
 

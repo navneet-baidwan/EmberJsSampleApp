@@ -34,7 +34,7 @@
 
   <div class="field">
     <label>Company Name</label>
-    <input type="text" name="last-name" placeholder="Company Name">
+    <input type="text" name="cname" placeholder="Company Name">
   </div> 
 
 
@@ -44,7 +44,7 @@
  <div class="field">
       <label>Company Type</label>
       <div class="ui fluid multiple search selection dropdown">
-            <input type="hidden" name="country">
+            <input type="hidden" name="ctype">
             <i class="dropdown icon" ></i>
             <div class="default text">Company Type</div>
                 <div class="menu">
@@ -59,7 +59,7 @@
  <div class="field">
       <label>Product Type</label>
       <div class="ui fluid multiple search selection dropdown">
-            <input type="hidden" name="country">
+            <input type="hidden" name="ptype">
             <i class="dropdown icon" ></i>
             <div class="default text">Company Type</div>
                 <div class="menu">
@@ -78,7 +78,7 @@
 
   <div class="field">
     <label>Establish year</label>
-    <input type="number" name="last-name" min="1" placeholder="Year">
+    <input type="number" name="eyear" min="1" placeholder="Year">
   </div>
 
 
@@ -89,12 +89,12 @@
   
   <div class="field">
     <label>Primary Contact</label>
-    <input type="text" name="last-name" placeholder="Contact">
+    <input type="text" name="contact" placeholder="Contact">
   </div>
 
   <div class="field">
     <label>Email address</label>
-    <input type="text" name="last-name" placeholder="Email">
+    <input type="text" name="email" placeholder="Email">
   </div>
 
 </div>
@@ -103,51 +103,41 @@
 
 <div class="field">
     <label>Company web url</label>
-    <input type="text" name="last-name" placeholder="Email">
+    <input type="text" name="web" placeholder="Email">
   
 </div>
 
 <div class="field">
     <label>Company address</label>
-    <textarea rows="2"></textarea>
+    <textarea rows="2" name="caddress"></textarea>
  
 </div>
 
 
 <div class="field">
     <label>Requirements</label>
-    <textarea rows="2"></textarea>
+    <textarea rows="2" name="crequirement"></textarea>
  
 </div>
 
 
 <div class="field">
     <label>Specialties</label>
-   <textarea rows="2"></textarea>
+   <textarea rows="2" name="specialties"></textarea>
  
 </div>
 
 <div class="field">
     <label>Description</label>
-    <textarea rows="2"></textarea>
+    <textarea rows="2" name="description"></textarea>
   
 </div>
 
 
 
+ <button class="ui button submit-button" type="submit" >Submit</button>
 
-  
-
-
-
-
-
-
-
-
-  <button class="ui button submit-button" type="submit">Submit</button>
-
-
+<div class="ui error message"></div>
 
 
 </form>
@@ -162,8 +152,4 @@
 
 
 
-</div>
-
-<div id="bottom-bar">
-  <div class="cpyrt"> Copyright © Your Website 2016 </div>
 </div>
