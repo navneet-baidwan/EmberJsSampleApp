@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
 
  					$('.ui.form')
 					  .form({
-
+					  	inline: true,
 					  	 fields: {
 					  	 			description: {
 								        rules: [

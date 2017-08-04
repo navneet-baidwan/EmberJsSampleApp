@@ -21,6 +21,7 @@ export default Ember.Controller.extend({
  	$(document).ready(function(){
  	$('.ui.form')
 					  .form({
+					  	inline: true,
 					    fields: {
 					      username: {
 					        rules: [

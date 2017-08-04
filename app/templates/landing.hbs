@@ -16,7 +16,7 @@
 
 <div class="ui grid" style="margin-top:30vh;">
   <div class="one wide column"></div>
-  <div class="fourteen wide column">
+  <div class="nine wide column">
 
 
 
@@ -32,10 +32,76 @@
 
 
   </div>
-   <div class="one wide column"></div>
-</div>
-     
+ 
 
+     
+<div class="five wide column">
+
+
+
+          
+           <div class="ui  column grid">
+              <div class="column">
+                <div class="ui fluid image">
+                  <div class="ui black ribbon label" style="margin-left:0px; width:32vw; margin-top:8px; z-index:20;">
+                   <i class="edit icon"></i> Create a new account
+                  </div>
+                </div>
+              </div>
+           </div>
+        
+
+         <div class="ui middle aligned center aligned grid">
+         
+              <div class="column">
+                    <form class="ui form signup" method="GET" action="http://localhost:4200/home">
+                        <div class="ui stacked segment">
+                         <br>
+                          <div class="field">
+                            <div class="ui left icon input">
+                              <i class="user icon"></i>
+                              <input type="text" name="email" placeholder="Full Name">
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui left icon input">
+                              <i class="user icon"></i>
+                              <input type="text" name="email" placeholder="Username">
+                            </div>
+                          </div>
+
+
+                          <div class="field">
+                            <div class="ui left icon input">
+                              <i class="mail icon"></i>
+                              <input type="text" name="email" placeholder="E-mail">
+                            </div>
+                          </div>
+                          <div class="field">
+                            <div class="ui left icon input">
+                              <i class="lock icon"></i>
+                              <input type="password" name="email" placeholder="Password">
+                            </div>
+                          </div>
+
+                          <div class="field">
+                            <div class="ui left icon input">
+                              <i class="lock icon"></i>
+                              <input type="password" name="password" placeholder="Confirm  Password">
+                            </div>
+                          </div>
+                        <div class="ui fluid large  submit button" {{action "afterSignup"}} style="    background-color: rgb(82, 100, 115); color:white;">Sign Up</div>
+                        </div>
+                      </form>
+                </div>
+          </div>
+
+
+
+
+  </div>
+  
+</div>
 
 
 </div>

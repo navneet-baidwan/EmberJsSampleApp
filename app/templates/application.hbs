@@ -198,12 +198,7 @@
            {{#link-to 'contact'}}Contact{{/link-to}}
         </a>
     {{/if}}   
-    {{#if  isLoggedIn}}   
-        <a class="item nav-text" >
-            Create company Page
-        </a>
-	
-     {{/if }}  
+
   
 
     
@@ -350,13 +345,13 @@
                           <div class="field">
                             <div class="ui left icon input">
                               <i class="user icon"></i>
-                              <input type="text" name="email" placeholder="Full Name">
+                              <input type="text" name="fname" placeholder="Full Name">
                             </div>
                           </div>
                           <div class="field">
                             <div class="ui left icon input">
                               <i class="user icon"></i>
-                              <input type="text" name="email" placeholder="Username">
+                              <input type="text" name="uname" placeholder="Username">
                             </div>
                           </div>
 
@@ -370,14 +365,14 @@
                           <div class="field">
                             <div class="ui left icon input">
                               <i class="lock icon"></i>
-                              <input type="password" name="email" placeholder="Password">
+                              <input type="password" name="password" placeholder="Password">
                             </div>
                           </div>
 
                           <div class="field">
                             <div class="ui left icon input">
                               <i class="lock icon"></i>
-                              <input type="password" name="password" placeholder="Confirm  Password">
+                              <input type="password" name="cpassword" placeholder="Confirm  Password">
                             </div>
                           </div>
                         <div class="ui fluid large instagram submit button" {{action "afterSignup"}}>Sign Up</div>

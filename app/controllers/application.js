@@ -131,21 +131,73 @@ export default Ember.Controller.extend({
 						$(document).ready(function(){
 							 				$('.ui.form.login')
 												  .form({
+												  	inline:true,
 												    fields: {
 												      email: {
 												        rules: [
 												          {
-												            type   : 'empty'
+												            type   : 'empty',
+												            prompt : '{name} cannot be empty'
+												           
 												          }
 												        ]
 												      },
 												       password: {
 												        rules: [
 												          {
-												            type   : 'empty'
+												            type   : 'empty',
+												            prompt : '{name} cannot be empty'
+												          
 												          }
 												        ]
 												      }
+												    }})
+
+											$('.ui.form.signup')
+												  .form({
+												  	inline:true,
+												    fields: {
+												      fname: {
+												        rules: [
+												          {
+												            type   : 'empty',
+												            prompt : '{name} cannot be empty'
+												          }
+												        ]
+												      },
+												      uname: {
+												        rules: [
+												          {
+												            type   : 'empty',
+												            prompt : '{name} cannot be empty'
+												          }
+												        ]
+												      },
+												      email: {
+												        rules: [
+												          {
+												            type   : 'empty',
+												            prompt : '{name} cannot be empty'
+												          }
+												        ]
+												      },
+												       password: {
+												        rules: [
+												          {
+												            type   : 'empty',
+												            prompt : '{name} cannot be empty'
+												          }
+												        ]
+												      },  
+												      cpassword: {
+												        rules: [
+												          {
+												            type   : 'empty',
+												            prompt : '{name} cannot be empty'
+												          }
+												        ]
+												      }
+												     
 												    }})
 
 								$('.ui.dropdown').on('click', function(){
