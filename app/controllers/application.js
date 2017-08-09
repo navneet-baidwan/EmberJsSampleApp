@@ -69,56 +69,57 @@ export default Ember.Controller.extend({
 					switch(r.currentPath){
 
 						case 'landing':
-							
+							this.setProperties({isSearch:false});	
 							this.setProperties({isLanding:true});
 							this.setProperties({isLoggedIn:false});
 
 						break;
 
 						case 'home':
-
+							this.setProperties({isSearch:false});
 							this.setProperties({isLanding:false});
 							this.setProperties({isLoggedIn:true});
 
 						break;
 
 						case 'about':
-
+							this.setProperties({isSearch:false});
 							this.setProperties({isLanding:false});
 							this.setProperties({isLoggedIn:true});
 
 						break;
 
 						case 'contact':
-
+							this.setProperties({isSearch:false});
 							this.setProperties({isLanding:false});
 							this.setProperties({isLoggedIn:true});
 
 						break;
 
 						case 'editprofile':
-
+							this.setProperties({isSearch:false});
 							this.setProperties({isLanding:false});
 							this.setProperties({isLoggedIn:true});
 							
 						break;
 
 						case 'results':
-
+							this.setProperties({isSearch:true});
 							this.setProperties({isLanding:false});
 							this.setProperties({isLoggedIn:true});
 							
 						break;
 
 						case 'details':
-
+							
+							this.setProperties({isSearch:false});
 							this.setProperties({isLanding:false});
 							this.setProperties({isLoggedIn:true});
 							
 						break;
 
 						case 'companyform':
-
+							this.setProperties({isSearch:false});
 							this.setProperties({isLanding:false});
 							this.setProperties({isLoggedIn:true});
 
@@ -137,7 +138,7 @@ export default Ember.Controller.extend({
 												        rules: [
 												          {
 												            type   : 'empty',
-												            prompt : '{name} cannot be empty'
+												            prompt : 'Invalid username or email'
 												           
 												          }
 												        ]
@@ -146,7 +147,7 @@ export default Ember.Controller.extend({
 												        rules: [
 												          {
 												            type   : 'empty',
-												            prompt : '{name} cannot be empty'
+												            prompt : 'Invalid password'
 												          
 												          }
 												        ]

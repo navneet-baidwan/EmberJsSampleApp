@@ -1,7 +1,6 @@
 <div>
 
-<div class="ui grid" style="margin-top:20vh; ">
-
+<div class="ui grid" style="margin-top:10vh; ">
 
 
 
@@ -12,7 +11,7 @@
     
     
 
-				      <a class="ui orange right ribbon label filter-ribbon">Company Type</a>
+				      <a class="ui grey right ribbon label filter-ribbon">Company Type</a>
 				       
 				      <br> 
 				      <div class="filter-section  ">
@@ -34,7 +33,7 @@
 							   </div>
 					   </div>
 
-				      <a class="ui teal right ribbon label filter-ribbon" >Product Type</a>
+				      <a class="ui grey right ribbon label filter-ribbon" >Product Type</a>
 				     
 				     <br>
 
@@ -59,7 +58,7 @@
 
 				    
 
-				    <a class="ui orange right ribbon label filter-ribbon">State</a>
+				    <a class="ui grey right ribbon label filter-ribbon">State</a>
 
 				    	      
 				    	      <br>
@@ -119,7 +118,7 @@
 								 </select>
 					   		
 								      <br>
-				    <a class="ui teal right ribbon label filter-ribbon">Country</a>
+				    <a class="ui grey right ribbon label filter-ribbon">Country</a>
 				    		<br>
 				    	    
 						    <div class="field">
@@ -376,7 +375,7 @@
 									</div>
 					  		
 									<br>
-				 	<a class="ui orange right ribbon label filter-ribbon">City</a>
+				 	<a class="ui grey right ribbon label filter-ribbon">City</a>
 
 				 	      <br>
 						       <select class="ui fluid dropdown" style="border:none !important;">
@@ -442,10 +441,14 @@
 
 <div class="column twelve wide" style="">
 	<div class="container">
-		<div class="ui fluid action input">
-		  <input type="text" placeholder="Search...">
-		  <div class="ui button">Search</div>
-		</div>
+	 <div class="item">
+        <div class="ui huge breadcrumb">
+          <a class="section">{{#link-to 'home'}}Home{{/link-to}}</a>
+          <i class="right chevron icon divider"></i>
+          <div class="active section">Search</div>
+        </div>
+      </div>
+	
 
 		<div class="ui items container">
 			<div class="item">
@@ -454,13 +457,25 @@
 				</div>
 				<div class="content">
 					<div class="header">
-						{{#link-to 'details'}}<a class="ember-view"> IMIL, Inc.</a>{{/link-to}}
+						{{#link-to 'details'}}<a class="ember-view" style="color:#4183C4 !important"> IMIL, Inc.</a>{{/link-to}}
 					</div>
 					<div class="meta">
 						<span>
-							<strong>Specialites: </strong>
-							<div class="ui label">
-								Develop new display market applications, and incorporate market demands into products
+							<strong>Description: </strong>
+							<div class="ui image label">
+							  <img src="/images/avatar/small/ade.jpg">
+							  Development
+							  
+							</div>
+							<div class="ui image label">
+							  <img src="/images/avatar/small/zoe.jpg">
+							  Designing
+							 
+							</div>
+							<div class="ui image label">
+							  <img src="/images/avatar/small/nan.jpg">
+							  Testing
+							  
 							</div>
 						</span>
 						<div class="description">

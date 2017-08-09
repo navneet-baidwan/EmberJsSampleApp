@@ -1,19 +1,19 @@
 <style type="text/css">
 
   .header-bar{
-    background: #2c3e50;
-    color:white;
+    background: #f9f9f9;
+    box-shadow: 1px 1px 5px #888888;
     position: fixed;
     width: 100%;
     top: 0;
-    height: 20vh;
+    height: 10vh;
     z-index: 50;
    
   }
   .heading-text{
-    color:white !important;
-    font-size:25px;
-    font-weight:bolder!important;
+    color: rgba(43, 64, 146, 0.54) !important;
+    font-size: 40px;
+    font-weight: bolder!important;
   }
   .nav-text{
     color:white !important;
@@ -39,7 +39,7 @@
     border-radius: 0px !important;
   }
   #home {
-    background-color: rgba(128, 128, 128, 0.49);
+    background-color:white;
     height: 100vh;
     width: 100%;
     overflow: scroll;
@@ -57,7 +57,7 @@
       width: 100%;
   }
   #footer{
-    height: 40vh;
+   
     background: #2C3E50;
     display: grid;
     align-items: center;
@@ -73,7 +73,7 @@
   .set-center{
     align-self: center;
     padding: 0.78571429em 0.92857143em;
-    margin: 0em 0.35714286em;
+   
   }
   .ui.icon.button{
     background: transparent;
@@ -147,12 +147,25 @@
     align-items: center!important;
     display: flex!important;
     font-size: 15px!important;
+
+}
+.ui.grey.ribbon.label {
+    border-color: #736e6e !important;
+    background-color: #f9f9f9 !important;
+    color: #777777 !important;
+    box-shadow: 1px 1px 5px grey;
+}
+.ui.grey.ribbon.label:hover {
+    border-color: #736e6e !important;
+    background-color: #f9f9f9 !important;
+    color: #777777 !important;
+    box-shadow: 1px 1px 5px grey;
 }
 .filter-header{
     text-align: center !important;
     font-size: 18px !important;
-    background: rgb(44, 62, 80) !important;
-    color: white !important;
+    background: #e0e1e2 !important;
+    color: #777777 !important;
     width: 200px !important;
     margin-top: -14px !important;
 }
@@ -169,6 +182,10 @@
     background: rgba(44, 62, 80, 0.68);
     overflow-y: scroll;
 }
+.ui.instagram.button{
+  background-color: #485a6d!important;
+}
+
 ::-webkit-scrollbar-track-piece  { background:white }
 
 </style>
@@ -179,27 +196,28 @@
 
 <div class="ui top fixed header-bar large" >
 
-    <div class="ui secondary  menu  " style="height:20vh">
+    <div class="ui secondary  menu  " style="height:10vh">
       
       <div class="left menu">
-       <a class="set-center heading-text">
+      
+        <a class="set-center heading-text" href="home">
           Workype
         </a>
+
+
    
-        
-
+     {{#if isSearch}}   
+      <div class="item" style="margin-left:50px; width:100%;">
       
-    {{#if  isLanding}}   
-        <a class="item nav-text" >
-           {{#link-to 'about'}}About{{/link-to}}
-        </a>
-	
-        <a class="item nav-text" >
-           {{#link-to 'contact'}}Contact{{/link-to}}
-        </a>
-    {{/if}}   
+       <div class="ui  fluid action input">
+          <input type="text" placeholder="Search companies here...">
+          <div class="ui button">Search</div>
+        </div>
 
-  
+      </div>
+    {{/if}}
+
+
 
     
 
@@ -215,7 +233,7 @@
 
                     <div class="field">
                       <label style="color:white">&nbsp;</label>
-                      <input value={{userEmail}} type="email" name="email" placeholder="Email" >
+                      <input value={{userEmail}} type="text" name="email" placeholder="Username or Email" >
                     </div>
                     <div class="field">
                        <label style="color:white">&nbsp;</label>
@@ -233,21 +251,14 @@
             {{else}}
 
 
-                  <div class="ui compact menu" style="margin-right:50px; background:transparent; border:none; ">
-                      <a class="item" style="color:white;">
-                        <i class="icon alarm" ></i> Notifications
-                        <div class="floating ui red label">22</div>
-                      </a>
-                     
-                    </div>
-
+              
                    <div class="ui inline dropdown" >
              
-                  <div class="text" style="color:white"  {{action "dropDown"}}>
+                  <div class="text" style="color:#313030;!imprtant"  {{action "dropDown"}} style="font-size: 20px; color:#313030;!imprtant">
                      <i class="user icon" ></i>
                     Jenny Hess
                   </div>
-                  <i class="dropdown icon"  style="color:white!important"></i>
+                  <i class="dropdown icon"  style="color:#313030;!imprtant; font-size: 20px;"></i>
               
                   <div class="menu">
                     <div class="item" {{action "getEditProfile"}}>
@@ -389,7 +400,7 @@
   
   <div id="footer">
 
-<div class="ui stackable two column grid">
+<div class="ui stackable three column grid">
   <div class="column center aligned">
   
     <h3 class="footer-text-h">Location</h3>
@@ -400,31 +411,17 @@
   <div class="column center aligned">
   
 
-       <h3 class="footer-text-h">AROUND THE WEB</h3>
-       <br>
-       <div class="ui stackable one column grid">
-       <div class="column">
-                <button class="ui icon button">
-                  <i class="facebook f icon"></i>
-                </button>
-                 <button class="ui icon button">
-                  <i class="google plus icon"></i>
-                </button>
-                 <button class="ui icon button">
-                  <i class="twitter icon"></i>
-                </button>
-                <button class="ui icon button">
-                  <i class="linkedin icon"></i>
-                </button>
-                <button class="ui icon button">
-                  <i class="dribble icon"></i>
-                </button>
-        </div>
-       </div>
+      <h3 class="footer-text-h"> {{#link-to 'about'}}About{{/link-to}}</h3>
        
 
   </div>
+   <div class="column center aligned">
   
+
+      <h3 class="footer-text-h">{{#link-to 'contact'}}Contact{{/link-to}}</h3>
+       
+
+  </div>
 </div>
 </div>
 
