@@ -85,14 +85,14 @@ export default Ember.Controller.extend({
 						case 'about':
 							this.setProperties({isSearch:false});
 							this.setProperties({isLanding:false});
-							this.setProperties({isLoggedIn:true});
+							//this.setProperties({isLoggedIn:true});
 
 						break;
 
 						case 'contact':
 							this.setProperties({isSearch:false});
 							this.setProperties({isLanding:false});
-							this.setProperties({isLoggedIn:true});
+							//this.setProperties({isLoggedIn:true});
 
 						break;
 
@@ -132,7 +132,7 @@ export default Ember.Controller.extend({
 						$(document).ready(function(){
 							 				$('.ui.form.login')
 												  .form({
-												  	inline:true,
+												  	
 												    fields: {
 												      email: {
 												        rules: [
@@ -162,7 +162,7 @@ export default Ember.Controller.extend({
 												        rules: [
 												          {
 												            type   : 'empty',
-												            prompt : '{name} cannot be empty'
+												            prompt : 'Please enter your full name'
 												          }
 												        ]
 												      },
@@ -170,15 +170,15 @@ export default Ember.Controller.extend({
 												        rules: [
 												          {
 												            type   : 'empty',
-												            prompt : '{name} cannot be empty'
+												            prompt : 'Please enter your username'
 												          }
 												        ]
 												      },
 												      email: {
 												        rules: [
 												          {
-												            type   : 'empty',
-												            prompt : '{name} cannot be empty'
+												            type   : 'email',
+												            prompt : 'Please enter valid e-mail address'
 												          }
 												        ]
 												      },
@@ -186,7 +186,7 @@ export default Ember.Controller.extend({
 												        rules: [
 												          {
 												            type   : 'empty',
-												            prompt : '{name} cannot be empty'
+												            prompt : 'Please enter your password'
 												          }
 												        ]
 												      },  
@@ -194,7 +194,7 @@ export default Ember.Controller.extend({
 												        rules: [
 												          {
 												            type   : 'empty',
-												            prompt : '{name} cannot be empty'
+												            prompt : 'Please re-enter your password'
 												          }
 												        ]
 												      }

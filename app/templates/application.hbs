@@ -11,7 +11,7 @@
    
   }
   .heading-text{
-    color: rgba(43, 64, 146, 0.54) !important;
+    color: #336699 !important;
     font-size: 40px;
     font-weight: bolder!important;
   }
@@ -58,7 +58,7 @@
   }
   #footer{
    
-    background: #2C3E50;
+    background: #C0C0C0;
     display: grid;
     align-items: center;
   }
@@ -88,12 +88,12 @@
     
   }
   .footer-text-h{
-    color:white !important;
+    color: #336699!important;
     font-weight: bold;
   }
 
   .footer-text-p{
-    color:white !important;
+    color:#336699 !important;
     font-size: 18px;
     font-weight: bold;
   }
@@ -152,20 +152,23 @@
 .ui.grey.ribbon.label {
     border-color: #736e6e !important;
     background-color: #f9f9f9 !important;
-    color: #777777 !important;
+    color: #336699!important; 
     box-shadow: 1px 1px 5px grey;
 }
 .ui.grey.ribbon.label:hover {
     border-color: #736e6e !important;
     background-color: #f9f9f9 !important;
-    color: #777777 !important;
+    color: #336699!important; 
     box-shadow: 1px 1px 5px grey;
+}
+.ui.form .field > label{
+  color:#336699 !Important;
 }
 .filter-header{
     text-align: center !important;
     font-size: 18px !important;
     background: #e0e1e2 !important;
-    color: #777777 !important;
+     color: #336699!important; 
     width: 200px !important;
     margin-top: -14px !important;
 }
@@ -199,11 +202,15 @@
     <div class="ui secondary  menu  " style="height:10vh">
       
       <div class="left menu">
-      
-        <a class="set-center heading-text" href="home">
+       {{#unless isLoggedIn}} 
+        <a class="set-center heading-text" href="/">
           Workype
         </a>
-
+        {{else}}
+        <a class="set-center heading-text" href="/home">
+          Workype
+        </a>
+      {{/unless}} 
 
    
      {{#if isSearch}}   
@@ -243,8 +250,9 @@
                       <label style="color:white">&nbsp;</label>
                       <button class="button ui instagram" type="submit" >Login</button>
                     </div>
-                  </div>
 
+                  </div>
+                  <div class="ui  error message" style="position: absolute; margin-top:-5px;"></div>
                   </form>
 
               
@@ -254,11 +262,11 @@
               
                    <div class="ui inline dropdown" >
              
-                  <div class="text" style="color:#313030;!imprtant"  {{action "dropDown"}} style="font-size: 20px; color:#313030;!imprtant">
+                  <div class="text" style="color:#336699;!imprtant"  {{action "dropDown"}} style="font-size: 20px; color:#336699;!imprtant">
                      <i class="user icon" ></i>
                     Jenny Hess
                   </div>
-                  <i class="dropdown icon"  style="color:#313030;!imprtant; font-size: 20px;"></i>
+                  <i class="dropdown icon"  style="color:#336699;!imprtant; font-size: 20px;"></i>
               
                   <div class="menu">
                     <div class="item" {{action "getEditProfile"}}>
@@ -303,95 +311,8 @@
 
 
 
+ 
 
-
-
-<--!Login form model will show on click on login button!-->
-
-  <div class="ui modal tiny"  id="login">
-        <i class="close icon"></i>
-        <div class="header">
-          Log-in to your account 
-        </div>
-         <div class="ui middle aligned center aligned grid">
-              <div class="column">
-               
-                      <form class="ui large form">
-                        <div class="ui stacked segment">
-                          <div class="field">
-                            <div class="ui left icon input">
-                              <i class="mail  icon"></i>
-                              <input type="text" name="email" placeholder="E-mail address">
-                            </div>
-                          </div>
-                          <div class="field">
-                            <div class="ui left icon input">
-                              <i class="lock icon"></i>
-                              <input type="password" name="password" placeholder="Password">
-                            </div>
-                          </div>
-                          <div class="ui fluid large instagram submit button" {{action "afterLogin"}}>Login</div>
-                        </div>
-                     </form>
-                </div>
-        </div>
-   </div>
-
-
-
-
-<--!Signup form model , will show on click on signup button!-->
-
-
-   <div class="ui modal tiny" id="signup">
-        <i class="close icon"></i>
-        <div class="header">
-          Sign Up
-        </div>
-         <div class="ui middle aligned center aligned grid">
-              <div class="column">
-                    <form class="ui large form">
-                        <div class="ui stacked segment">
-                         
-                          <div class="field">
-                            <div class="ui left icon input">
-                              <i class="user icon"></i>
-                              <input type="text" name="fname" placeholder="Full Name">
-                            </div>
-                          </div>
-                          <div class="field">
-                            <div class="ui left icon input">
-                              <i class="user icon"></i>
-                              <input type="text" name="uname" placeholder="Username">
-                            </div>
-                          </div>
-
-
-                          <div class="field">
-                            <div class="ui left icon input">
-                              <i class="mail icon"></i>
-                              <input type="text" name="email" placeholder="E-mail">
-                            </div>
-                          </div>
-                          <div class="field">
-                            <div class="ui left icon input">
-                              <i class="lock icon"></i>
-                              <input type="password" name="password" placeholder="Password">
-                            </div>
-                          </div>
-
-                          <div class="field">
-                            <div class="ui left icon input">
-                              <i class="lock icon"></i>
-                              <input type="password" name="cpassword" placeholder="Confirm  Password">
-                            </div>
-                          </div>
-                        <div class="ui fluid large instagram submit button" {{action "afterSignup"}}>Sign Up</div>
-                        </div>
-                      </form>
-                </div>
-          </div>
-    </div>
 
 
 {{outlet}}
@@ -411,15 +332,14 @@
   <div class="column center aligned">
   
 
-      <h3 class="footer-text-h"> {{#link-to 'about'}}About{{/link-to}}</h3>
+      <a href="about" class="footer-text-h" ><h3>About</h3></a>
        
 
   </div>
    <div class="column center aligned">
   
-
-      <h3 class="footer-text-h">{{#link-to 'contact'}}Contact{{/link-to}}</h3>
-       
+       <a href="contact" class="footer-text-h" ><h3>Contact</h3></a>
+        
 
   </div>
 </div>
