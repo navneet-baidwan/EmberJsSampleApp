@@ -1,8 +1,12 @@
 import Ember from 'ember';
 
+
+
+
+
 export default Ember.Controller.extend({
 
-  
+
 
   actions: {
           
@@ -18,8 +22,35 @@ export default Ember.Controller.extend({
 }
  , init: function(){
 
+ 
+
+
  	$(document).ready(function(){
- 	$('.ui.form')
+
+ 		 $('.ui.menu').find('.item').tab()
+
+
+
+		     $('.ui .menu.item').on('click', function() {
+
+
+		        $('.ui.menu.item').removeClass('active');
+		        $(this).addClass('active');
+
+		        $('.ui.menu').find('.item').tab()
+
+		        
+		      
+		    });
+
+
+		     $('.ui.dropdown').on('click', function(){
+									    	 
+					$('.ui.dropdown').dropdown()
+			 })
+
+
+ 	$('.ui.form.profile')
 					  .form({
 					  	inline: true,
 					    fields: {
@@ -98,8 +129,96 @@ export default Ember.Controller.extend({
 					    }
 					  });
 
+
+
+					  $('.ui.form.company')
+					  .form({
+					  	inline: true,
+					  	 fields: {
+					  	 			description: {
+								        rules: [
+								          {
+								            type   : 'empty',
+								            
+								          }
+								        ]
+								     },
+
+								    eyear: {
+								        rules: [
+								          {
+								            type   : 'empty',
+								            
+								          }
+								        ]
+								      },
+								      speciality: {
+								        rules: [
+								          {
+								            type   : 'empty',
+								            
+								          }
+								        ]
+								      },
+								     
+								       cemail: {
+								        rules: [
+								          {
+								            type   : 'email',
+								            prompt : '{name} cannot be empty'
+								          }
+								        ]
+								      },
+								       cname: {
+								        rules: [
+								          {
+								            type   : 'empty',
+								            prompt : '{name} cannot be empty'
+								          }
+								        ]
+								      },
+								       ctype: {
+								        rules: [
+								          {
+								            type   : 'empty',
+								            prompt : '{name} cannot be empty'
+								          }
+								        ]
+								      },
+								       ptype: {
+								        rules: [
+								          {
+								            type   : 'empty',
+								            prompt : '{name} cannot be empty'
+								          }
+								        ]
+								      },
+
+									
+								      ccontact: {
+								        rules: [
+								          {
+								            type   : 'empty',
+								            prompt : '{name} cannot be empty'
+								          }
+								        ]
+								      },
+								      url: {
+								        rules: [
+								          {
+								            type   : 'empty',
+								            prompt : '{name} cannot be empty'
+								          }
+								        ]
+								      }
+								  }
+					  })
+
 					
 				});
+
+
+
 
 
 
@@ -113,3 +232,4 @@ export default Ember.Controller.extend({
 
 });
 
+ 

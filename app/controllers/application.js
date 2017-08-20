@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 			isHome: false,
+			
 
 	setupController: function(controller, model){
 	    this._super(controller, model);
@@ -43,16 +44,7 @@ export default Ember.Controller.extend({
 			           this.transitionToRoute('home')
           		},
 		         
-		        afterSignup() {
-		            $('#signup.tiny.modal')
-		            .modal('hide')
-		          ;
-		          this.toggleProperty('isHome');
-		             
-		           this.transitionToRoute('home')
-		        },
-			   
-			    
+		     
 			  
 
 			  }
@@ -154,53 +146,7 @@ export default Ember.Controller.extend({
 												      }
 												    }})
 
-											$('.ui.form.signup')
-												  .form({
-												  	inline:true,
-												    fields: {
-												      fname: {
-												        rules: [
-												          {
-												            type   : 'empty',
-												            prompt : 'Please enter your full name'
-												          }
-												        ]
-												      },
-												      uname: {
-												        rules: [
-												          {
-												            type   : 'empty',
-												            prompt : 'Please enter your username'
-												          }
-												        ]
-												      },
-												      email: {
-												        rules: [
-												          {
-												            type   : 'email',
-												            prompt : 'Please enter valid e-mail address'
-												          }
-												        ]
-												      },
-												       password: {
-												        rules: [
-												          {
-												            type   : 'empty',
-												            prompt : 'Please enter your password'
-												          }
-												        ]
-												      },  
-												      cpassword: {
-												        rules: [
-												          {
-												            type   : 'empty',
-												            prompt : 'Please re-enter your password'
-												          }
-												        ]
-												      }
-												     
-												    }})
-
+											
 								$('.ui.dropdown').on('click', function(){
 				    	 
 

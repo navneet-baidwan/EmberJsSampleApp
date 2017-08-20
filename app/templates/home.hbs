@@ -12,24 +12,47 @@
 
 
 
+<div style="margin-top:30vh">
+       <center><a class="heading-text">
+                Workype
+              </a></center>
+       <br><br><br><br>
+      <div class="ui grid" >
+       
+        <div class="sixteen wide column">
 
 
-<div class="ui grid" style="margin-top:50vh">
-  <div class="one wide column"></div>
-  <div class="fourteen wide column">
+
+       <center>
 
 
 
-        <center>
-        <div class="ui massive action input" style="max-width:100%; min-width:80%;">
-          <input type="text" placeholder="Search companies hear...">
-          <div class="ui button" {{action "getResults"}}>Search</div>
+            <div class="ui right fuild  labeled input action" style="width:60%;">
+             
+              <div class="ui dropdown label" style="background:white; border:1px solid #c7c7c7;">
+                <div class="text">Category</div>
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                  <div class="item">Bussiness Developer</div>
+                  <div class="item">Manufacturer</div>
+                  <div class="item">Suplier</div>
+                </div>
+              </div>
+
+               <input type="text" placeholder="Find domain" style=" border:1px solid #c7c7c7;">
+               <div class="ui button" {{action "getResults"}} style="background:#4d7fb1; color:white;">&nbsp;Go! &nbsp;&nbsp;</div>
+            </div>
+
+       </center>
+
+
+
+
+
+
         </div>
-         
-        </center>
-
-  </div>
-   <div class="one wide column"></div>
+        </div>
+   
 </div>
      
 
