@@ -1,18 +1,20 @@
 
 
- <div class="ui huge breadcrumb" style="margin-top:13vh; margin-left:20px;">
+
+ <div class="ui huge breadcrumb breadcrumb-position" >
           <a class="section" href="home">Home</a>
           <i class="right chevron icon divider"></i>
           <div class="active section">Edit Profile</div>
   </div>
 <br>
 <br>
-<div class="ui grid" >
+<div class="full-height">
+<div class="ui grid">
 
 
   <div class="three wide column">
 
-    <div class="ui vertical pointing menu attached" style="margin-left:20px;">
+    <div class="ui vertical pointing menu attached pointing-menu-style">
      
       <a class="active item" data-tab="first">Profile</a>
       <a class="item" data-tab="second">Company</a>
@@ -22,86 +24,81 @@
   </div>
 
 
-  <div class="thirteen wide column">
+  <div class="twelve wide column">
 
 
 
-    <div class="ui  attached active tab " data-tab="first">
+    <div class="ui  attached active tab edit-form" data-tab="first">
       
     <div class="ui grid">
       <div class="twelve wide column">
             <form class="ui form profile">
+             <div class="two fields"> 
               
-              <div class="field ">
-                <label>Name</label>
-                <input type="text" name="fname" placeholder="Name">
-              </div>
-            
-
-              <div class="field">
-                <label>Email</label>
-                <input type="email" name="email" placeholder="Email">
-              </div>
-
-
-              <div class="field">
-                  <label>Contact</label>
-                  <input type="number" name="contact" placeholder="Contact">
-              </div>
-
-              <div class="field">
-                <label>Job Title</label>
-                <input type="text" name="jobtitle" placeholder="Jobtitle">
-              </div>
-
-
-              <div class="field ">
+               <div class="field ">
                 <label>Username</label>
-                <input type="text" name="username" placeholder="Username">
+                <input type="text" name="username" placeholder="Username" class="base-input-border">
               </div> 
 
               <div class="field ">
+                <label>Name</label>
+                <input type="text" name="fname" placeholder="Name"  class="base-input-border">
+              </div>
+            
+
+             
+            </div>
+            <div class="two fields"> 
+              <div class="field">
+                  <label>Contact</label>
+                  <input type="number" name="contact" placeholder="Contact"  class="base-input-border">
+              </div>
+
+               <div class="field">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Email"  class="base-input-border">
+              </div>
+
+            
+            </div>
+            <div class="two fields"> 
+              <div class="field">
+                <label>Job Title</label>
+                <input type="text" name="jobtitle" placeholder="Jobtitle"  class="base-input-border">
+              </div>
+
+              <div class="field ">
               <label>Experience in yrs</label>
-                   <div class="ui  dropdown label" style="background:white; border:1px solid #c7c7c7;font-size:16px; font-weight: 100;">
-                              <div class="text" style="min-width:20vw">Select experience in yrs &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                              <i class="dropdown icon"></i>
-                              <div class="menu">
-                                <div class="item">1</div>
-                                <div class="item">2</div>
-                                <div class="item">3</div>
-                              </div>
-                            </div>
+                 <select class="ui dropdown base-input-border">
+                  <option value="">Select year</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  
+                </select>
                 </div> 
 
                      
-
-                <div class="field">
-                  <label>Username</label>
-                  <input type="text" name="username" min="1" placeholder="">
-                </div>
+               </div>
+               
            
                 <div class="field">
                   <label>Summary</label>
-                  <textarea rows="2" name="summary" placeholder=""></textarea>
+                  <textarea rows="4" name="summary" placeholder="Summary..."  class="base-input-border"></textarea>
                 </div>
            
-                <button class="ui button submit-button"  type="submit">Update</button>
+                <button class="ui button submit-button"  type="submit">Save</button>
         
           </form>
         </div>
-        <div class="four wide column" style="text-align:center">
+        <div class="four wide column align-center">
           
 
-            <img src="https://www.ravensbourne.ac.uk/content/img/default-pupil-profile.png" style="width:200px; border-radius:10px;">
+            <img class="upload-pic" src="assets/upload.png">
             <br>
             <br>
-            <button class="ui button " style="width:200px;     background: #c7c7c7;" type="submit">Upload new picture</button>
-            <input type="file" style="    position: absolute;
-            left: 10%;
-            width: 70%;
-            height: 50px;
-            background: red;
-            opacity: 0;">
+            <button class="ui button upload-button"  type="submit">Upload New Picture</button>
+            <input type="file" class="file-input-style">
         </div>
       </div>
     </div>
@@ -114,29 +111,32 @@
 
 
 
-    <div class="ui  attached tab " data-tab="second">
+    <div class="ui  attached tab edit-form" data-tab="second" >
     
     <div class="ui grid">
       <div class="twelve wide column">    
         <form class="ui form company">
+
+        <div class="two fields">
             <div class="field ">
               <label>Company Name</label>
-              <input type="text" name="cname" placeholder="">
+              <input type="text" name="cname" placeholder="Company Name"  class="base-input-border">
             </div>
             
 
             <div class="field">
               <label>URL</label>
-              <input type="email" name="url" placeholder="">
+              <input type="email" name="url" placeholder="URL" class="base-input-border">
             </div>
 
-
+        </div>
+        <div class="three fields">
             <div class="field">
             <label>Company Type</label>
-            <div class="ui fluid multiple search selection dropdown">
+            <div class="ui fluid multiple search selection dropdown base-input-border" >
                   <input type="hidden" name="ctype">
                   <i class="dropdown icon" ></i>
-                  <div class="default text">Company Type</div>
+                  <div class="default text black-text">Company Type</div>
                       <div class="menu">
                       <div class="item" data-value="c1">Manufacturer</div>
                        <div class="item" data-value="c2">Electronics</div>
@@ -147,10 +147,10 @@
 
             <div class="field">
             <label>Product Type</label>
-            <div class="ui fluid multiple search selection dropdown">
+            <div class="ui fluid multiple search selection dropdown base-input-border" >
                   <input type="hidden" name="ptype">
                   <i class="dropdown icon" ></i>
-                  <div class="default text">Product Type</div>
+                  <div class="default text black-text">Product Type</div>
                       <div class="menu">
                       <div class="item" data-value="c1">Software</div>
                        <div class="item" data-value="c2">Hardware</div>
@@ -158,60 +158,62 @@
                       </div>
                    </div>
              </div>
+         
 
-
-
-          <div class="field ">
-          <label>Established Year</label>
-               <div class="ui  dropdown label" style="background:white; border:1px solid #c7c7c7;font-size:16px; font-weight: 100;">
-                          <div class="text" style="min-width:20vw">Select established year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                          <i class="dropdown icon"></i>
-                          <div class="menu">
-                            <div class="item">2001</div>
-                            <div class="item">2002</div>
-                            <div class="item">2003</div>
-                            <div class="item">2004</div>
-                            <div class="item">2005</div>
-                            <div class="item">2006</div>
-                            <div class="item">2007</div>
-                            <div class="item">2008</div>
-                            <div class="item">2009</div>
-                            <div class="item">2010</div>
-                            <div class="item">2011</div>
-                            <div class="item">2012</div>
-                            <div class="item">2013</div>
-                            <div class="item">2014</div>
-                            <div class="item">2015</div>
-                            <div class="item">2016</div>
-                            <div class="item">2017</div>
-                            
-                          </div>
-                        </div>
-            </div> 
+            <div class="field ">
+              <label>Established Year</label>
+                 <select class="ui dropdown base-input-border">
+                  <option value="">Select year</option>
+                  <option value="1">2001</option>
+                  <option value="2">2002</option>
+                  <option value="3">2003</option>
+                  
+                </select>
+                </div> 
 
                      
+            </div>
+
+         
 
 
-           
+          <div class="two fields">
            
             <div class="field">
               <label>Primary Contact</label>
-              <input type="number" name="ccontact" min="1" placeholder="">
+              <input type="number" name="ccontact" min="1" placeholder="Primary Contact" class="base-input-border">
             </div>
 
             <div class="field">
               <label>Company Email</label>
-              <input type="email" name="cemail" min="1" placeholder="">
+              <input type="email" name="cemail" min="1" placeholder="Company Email" class="base-input-border">
             </div>
+
+          </div>
            
             <div class="field">
               <label>Specialities</label>
-              <textarea rows="2" name="speciality" placeholder=""></textarea>
-            </div>
+                <div class="ui fluid multiple search selection dropdown base-input-border" >
+                  <input type="hidden" name="ptype">
+                  <i class="dropdown icon" ></i>
+                  <div class="default text black-text">Specialities</div>
+                      <div class="menu">
+                      <div class="item" data-value="c1">Business Specific</div>
+                       <div class="item" data-value="c2">Education</div>
+                        <div class="item" data-value="c3">Finance</div>
+                        <div class="item" data-value="c4">Healthcare</div>
+                        <div class="item" data-value="c5">Occupation</div>
+                        <div class="item" data-value="c6">Online Activities</div>
+
+                      </div>
+                   </div>
+             </div>
+              
+        
 
              <div class="field">
               <label>Description</label>
-              <textarea rows="2" name="description" placeholder=""></textarea>
+              <textarea rows="2" name="description" placeholder="Description..." class="base-input-border"></textarea>
             </div>
            
            <button class="ui button submit-button"  type="submit">Save</button>
@@ -219,19 +221,14 @@
       </form>
 
       </div>
-        <div class="four wide column" style="text-align:center">
+        <div class="four wide column align-center">
           
 
-            <img src="http://www.scoutsengidsennieuwland.be/assets/public/img/icons/img_icon.png" style="width:200px">
+            <img class="upload-pic" src="assets/upload.png">
             <br>
             <br>
-            <button class="ui button " style="width:200px;     background: #c7c7c7;" type="submit">Upload company logo</button>
-            <input type="file" style="    position: absolute;
-            left: 10%;
-            width: 70%;
-            height: 50px;
-            background: red;
-            opacity: 0;">
+            <button class="ui button upload-button" type="submit">Upload Company Logo</button>
+            <input type="file" class="file-input-style">
         </div>
       </div>
 
@@ -246,4 +243,5 @@
   </div>
 
 
+</div>
 </div>

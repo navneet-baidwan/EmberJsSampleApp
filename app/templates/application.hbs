@@ -1,224 +1,6 @@
-<style type="text/css">
 
-  .header-bar{
-    background: #f9f9f9;
-    box-shadow: 1px 1px 5px #888888;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    height: 10vh;
-    z-index: 50;
-   
-  }
-  .heading-text{
-    color: #4d7fb1 !important;
-    font-size: 40px;
-    font-weight: bolder!important;
-  }
-  .subheading-text{
-    color: #4d7fb1 !important;
-    font-size: 20px;
-    font-weight: bolder!important;
-  }
-  .nav-text{
-    color:white !important;
-    font-size:18px;
-    font-weight:bolder!important;
-  }
-  .set-center{
-    height:120px;
-    display:flex !important;;
-    align-items:center!important;
- 
-  }
-  .login-btn{
-    position:absolute;
-    right:20px;
-    top:25px;
-  }
-  .stable{
-     position:fixed;
-  }
-  .ui.secondary.menu .active.item {
-    background: #18BC9C !important;
-    border-radius: 0px !important;
-  }
-  #home {
-    background-color:white;
-    height: 100vh;
-    width: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
- 
-  }
-
-  #about {
-      background-color: blue;
-      height: 100vh;
-      width: 100%;
-  }
-  #contact {
-      background-color: red;
-      height: 100vh;
-      width: 100%;
-  }
-  #footer{
-   
-      align-items: center;
-      border-top: 3px solid #c7c7c7;
-  }
-  #bottom-bar{
-    height: 50px;
-    background: #1d2a38;
-    display: grid;
-    align-items: center;
-    text-align:center;
-   
-  }
-  .set-center{
-    align-self: center;
-    padding: 0.78571429em 0.92857143em;
-   
-  }
-  .ui.icon.button{
-    background: transparent;
-    border: 2px solid white;
-    border-radius: 100%;
-    color:white;
-  }
-
-  .ui.icon.button:hover{
-    background: white !important;
-    color:#18BC9C;
-    
-  }
-  .footer-text-h{
-    color: #4d7fb1!important;
-    font-weight: bold;
-  }
-
-  .footer-text-p{
-    color:#4d7fb1 !important;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  .cpyrt{
-    color:white;
-  }
-	
-	a:link, a:visited, a:hover, a:active {
-	  text-decoration: none; color: white;
-	}
-
-.ui.black.ribbon.label{
-  top:-25px;
-  background-color: rgb(44, 62, 80) !important;
-  text-align: center;
-  font-size: 20px;
-  border-color: #e4e4e8 !important;
-  margin-left: -5px;
-}
-.ui.secondary.menu .active.item{
-  background:transparent !important;
-}
-.ui.ribbon.label{
-      min-width: 105%;
-      min-height:50px;
-
-
-}
-.form-container{
-  height: 80vh;
+<link href="style/style.css" rel="stylesheet" type="text/css">
   
-  overflow:scroll;
-  width: 90%;
-  margin: 5%;
-
-}
-.submit-button{
-   background: rgb(77, 127, 177) !important;
-    /* width: 80%!important; */
-    color: white!important;
-    height: 50px!important;
-    /* margin-left: 10%!important; */
-    font-size: 20px!important;
-}
-.seardh-top{
-    position: absolute !important;
-    top: 25vh;
-    left: 94px;
-    height: 42px;
-    width:90%;
-}
-.filter-ribbon{
-    text-align: center !important;
-    align-items: center!important;
-    display: flex!important;
-    font-size: 15px!important;
-
-}
-.ui.grey.ribbon.label {
-    border-color: #736e6e !important;
-    background-color: #f9f9f9 !important;
-    color: #4d7fb1!important; 
-    box-shadow: 1px 1px 5px grey;
-}
-.ui.grey.ribbon.label:hover {
-    border-color: #736e6e !important;
-    background-color: #f9f9f9 !important;
-    color: #4d7fb1!important; 
-    box-shadow: 1px 1px 5px grey;
-}
-.ui.form .field > label{
-  color:#4d7fb1 !Important;
-}
-.ui.dropdown .menu > .item:hover {
-  background:#4d7fb1;
-}
-.ui.menu .ui.dropdown .menu > .item:hover {
-  background:#4d7fb1 !important;
-  color:white!important;
-}
-
-
-.filter-header{
-    text-align: center !important;
-    font-size: 18px !important;
-    background: #e0e1e2 !important;
-     color: #4d7fb1!important; 
-    width: 200px !important;
-    margin-top: -14px !important;
-}
-.filter-section{
-  margin-left:30px;
-
-}
-
-.sidemenu{
-    border: 2px solid #2c3e50;
-    max-width: 50%;
-    width:200px;
-    height: 100vh;
-    background: rgba(44, 62, 80, 0.68);
-    overflow-y: scroll;
-}
-.ui.instagram.button{
-  background-color: #485a6d!important;
-}
-.mydropdown{
-    width: 50vh!important;
-    height: 35px!important;
-    align-items: center!important;
-    font-size: 15px!important;
-    
-}
-
-::-webkit-scrollbar-track-piece  { background:white }
-
-</style>
-
-
-
 
 
 <div class="ui top fixed header-bar large" >
@@ -227,23 +9,23 @@
       
       <div class="left menu">
        {{#unless isLoggedIn}} 
-        <a class="set-center subheading-text" href="/">
+        <a class="set-center heading-text" href="/">
           Workype
         </a>
         {{else}}
-        <a class="set-center subheading-text" href="/home">
+        <a class="set-center heading-text" href="/home">
           Workype
         </a>
       {{/unless}} 
 
    
      {{#if isSearch}}   
-      <div class="item" style="margin-left:50px; width:100%;">
-      <div class="ui right labeled input">
-        <input type="text" placeholder="Search...">
-        <div class="ui basic label">
-         &nbsp;&nbsp; Go! &nbsp;&nbsp;&nbsp;
-        </div>
+      <div class="item full-width" style="margin-left:50px;">
+      <div class="ui action input header-search">
+        <input type="text" placeholder="Search..." class="border-none">
+        <button class=" ui button button-primary ">
+         Go! 
+        </button>
       </div>
       
 
@@ -260,21 +42,21 @@
           <a class="ui set-center">
            {{#unless isLoggedIn}} 
 
-               <form class="ui form login " method="GET" action="http://localhost:4200/home" style="width:100%; ">
+               <form class="ui form login full-width" method="GET" action="http://localhost:4200/home">
  
                   <div class=" three  fields">
 
                     <div class="field">
-                      <label style="color:white">&nbsp;</label>
+                      <label>&nbsp;</label>
                       <input value={{userEmail}} type="text" name="email" placeholder="Username or Email" >
                     </div>
                     <div class="field">
-                       <label style="color:white">&nbsp;</label>
+                       <label>&nbsp;</label>
                       <input type="password" name="password" placeholder="Password" >
                     </div>
                     <div class="field">
-                      <label style="color:white">&nbsp;</label>
-                      <button class="button ui " style="background:#4d7fb1; color:white;" type="submit" >Login</button>
+                      <label>&nbsp;</label>
+                      <button class="button ui button-primary"  type="submit" >Login</button>
                     </div>
 
                   </div>
@@ -286,17 +68,29 @@
 
 
 
-            <div class="ui compact menu" style="background: #c1bebe;">
-              <div class="ui simple dropdown item">
-                Jenny Hess
-                <i class="dropdown icon"></i>
-                <div class="menu">
-                  <div class="item" {{action "getEditProfile"}}>Edit Profile </div>
-                  <div class="item" {{action "getLogout"}}>Logout</div>
+
+                 <div class="ui inline dropdown" >
+             
+                  <div class="text base-icon-size base-color"  {{action "dropDown"}}>
+                     <img class="ui avatar image" src="images/j.jpg">
+                    Jenny Hess
+                  </div>
+                  <i class="dropdown icon base-icon-size base-color"></i>
+              
+                  <div class="menu">
+                    <div class="item base-icon-size" {{action "getEditProfile"}}>
+                      <img class="ui avatar image" src="images/j.jpg">
+                       Edit Profile &nbsp;&nbsp;
+                    </div>
                  
-                </div>
-              </div>
-            </div>
+                    <div class="item base-icon-size" {{action "getLogout"}}>
+                        <img class="ui avatar image" src="images/logout.png">
+                          Logout
+                    </div>
+                  </div>
+                  </div>
+
+            
               
                   
               
@@ -337,11 +131,11 @@
 
 
 
-<div class="ui grid" style="border-top:3px solid #c7c7c7; height:50px; width:90%; margin-left:5%;" >
-  <div class="fourteen wide column"> <p style="color:#4d7fb1; padding:2px;margin-left:10px;">Copyright@yourcompanyname</p></div>
+<div class="ui grid top-divide footer">
+  <div class="fourteen wide column"> <p  class="base-color cpyrt">Copyright@yourcompanyname</p></div>
   <div class="ui grid" style="padding:10px;">
-  <div class="eight wide column" style="color:#4d7fb1;"> <a href="about" style="color:#4d7fb1;">About</a></div>
-  <div class="eight wide column" style="color:#4d7fb1;"> <a href="contact" style="color:#4d7fb1;">Contact</a></div>
+  <div class="eight wide column" > <a href="about" class="base-color">About</a></div>
+  <div class="eight wide column" > <a href="contact" class="base-color">Contact</a></div>
  </div>
   
 </div>

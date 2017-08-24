@@ -6,59 +6,54 @@
 
 
 
-<div id="home">
 
 
-
-
-
-<div style="margin-top:30vh">
-       <center><a class="heading-text">
+<div class="base-page">
+  <br>
+  <br>
+  <br>
+      <center>
+        <a class="heading-text">
                 Workype
-              </a></center>
-       <br><br><br><br>
+        </a>
+      </center>
+       
+      <br><br><br><br>
+
+
+
       <div class="ui grid" >
        
         <div class="sixteen wide column">
 
 
 
-       <center>
+           <center>
 
 
 
-            <div class="ui right fuild  labeled input action" style="width:60%;">
-             
-              <div class="ui dropdown label" style="background:white; border:1px solid #c7c7c7;">
-                <div class="text">Category</div>
-                <i class="dropdown icon"></i>
-                <div class="menu">
-                  <div class="item">Bussiness Developer</div>
-                  <div class="item">Manufacturer</div>
-                  <div class="item">Suplier</div>
+                <div class="ui right fuild  labeled input action search-home">
+                 
+                  <div class="ui dropdown label">
+                    <div class="text search-dropdown">Category</div>
+                    <i class="dropdown icon base-icon-size"></i>
+                    <div class="menu">
+                      <div class="item medfont">Bussiness Developer</div>
+                      <div class="item medfont">Manufacturer</div>
+                      <div class="item medfont">Suplier</div>
+                    </div>
+                  </div>
+
+                   <input type="text" placeholder="Search Company..." >
+                   <div class="ui button button-primary" {{action "getResults"}}>&nbsp;Go! &nbsp;&nbsp;</div>
                 </div>
-              </div>
 
-               <input type="text" placeholder="Find domain" style=" border:1px solid #c7c7c7;">
-               <div class="ui button" {{action "getResults"}} style="background:#4d7fb1; color:white;">&nbsp;Go! &nbsp;&nbsp;</div>
-            </div>
+           </center>
 
-       </center>
+      </div>
+    </div>
+  </div>
 
-
-
-
-
-
-        </div>
-        </div>
-   
-</div>
-     
-
-
-
-</div>
 
 
 
