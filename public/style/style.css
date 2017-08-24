@@ -193,38 +193,13 @@
     background: #18BC9C !important;
     border-radius: 0px !important;
   }
-  #home {
-    background-color:white;
-    height: 100vh;
-    width: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
- 
-  }
-
-  #about {
-      background-color: blue;
-      height: 100vh;
-      width: 100%;
-  }
-  #contact {
-      background-color: red;
-      height: 100vh;
-      width: 100%;
-  }
+  
   .footer{
     height:50px !important;
     width:90% !important;
     margin-left:5% !important;
   }
-  #bottom-bar{
-    height: 50px;
-    background: #1d2a38;
-    display: grid;
-    align-items: center;
-    text-align:center;
-   
-  }
+ 
   .set-center{
     align-self: center;
     padding: 0.78571429em 0.92857143em;
@@ -312,25 +287,8 @@
     height: 42px;
     width:90%;
 }
-.filter-ribbon{
-    text-align: center !important;
-    align-items: center!important;
-    display: flex!important;
-    font-size: 15px!important;
 
-}
-.ui.grey.ribbon.label {
-    border-color: #736e6e !important;
-    background-color: #f9f9f9 !important;
-    color: #4d7fb1!important; 
-    box-shadow: 1px 1px 5px grey;
-}
-.ui.grey.ribbon.label:hover {
-    border-color: #736e6e !important;
-    background-color: #f9f9f9 !important;
-    color: #4d7fb1!important; 
-    box-shadow: 1px 1px 5px grey;
-}
+
 .ui.form .field > label{
   color:#4d7fb1 !Important;
 }
@@ -395,13 +353,12 @@
   color: black !important;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: pink;
+  color: black !important;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: pink;
+  color: black !important;
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: pink;
-}
+   color: black !important;
 
 ::-webkit-scrollbar-track-piece  { background:white }
